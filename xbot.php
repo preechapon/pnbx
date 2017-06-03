@@ -29,7 +29,7 @@ echo $result;
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text." http://202.29.80.36/bizapp/skf_store/ ".$result . ' rrrrr '
+				'text' => $text." http://202.29.80.36/bizapp/skf_store/ ".$result . ' rrrrr  x ' . $replyToken
 			];
 			//test 
 		   	//test
