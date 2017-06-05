@@ -4,7 +4,7 @@ $sc = '7cfadaf7fbbd66688cafb178506354af';
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '7cfadaf7fbbd66688cafb178506354af']);
-$response = $bot->getProfile('<userId>');
+$response = $bot->getProfile('U006ba5f850250829ce1c8797633a7575');
 if ($response->isSucceeded()) {
     $profile = $response->getJSONDecodedBody();
 	$xProfile = $profile['displayName'] . " xxxx " .  $profile['statusMessage'] . " rrrr " . $profile['userid'];
