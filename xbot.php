@@ -31,7 +31,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text . " rrrr " 
+				'text' => $text . " <strong> rrrr </strong> " 
 				
 				//'text' => $text." http://202.29.80.36/bizapp/skf_store/ ".$result . ' rrrrr  x ' . $replyToken
 			];
