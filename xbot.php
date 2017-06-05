@@ -1,7 +1,7 @@
 <?php
 $access_token = 'Wq9xxsG1gxLCMJba+ZwZ8X/8KMJWgBk6PmqkRPfrM0IoWHCVwuaChqcB+fcKZQ/RxKlZabEzvYM5BePVCSs0bNn/YSVteCjWvWCr67dtNObLd66Zn2oCnHK1Rp/uJ17dRWKuGPdoTqri9lEX+mRdxwdB04t89/1O/w1cDnyilFU=';
-$sc = '7cfadaf7fbbd66688cafb178506354af';
-
+$xProfil="arr";
+/*
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '7cfadaf7fbbd66688cafb178506354af']);
 $response = $bot->getProfile('U006ba5f850250829ce1c8797633a7575');
@@ -12,6 +12,7 @@ if ($response->isSucceeded()) {
     echo $profile['pictureUrl'];
     echo $profile['statusMessage'];
 }
+*/
 
 
 // Get POST body content
