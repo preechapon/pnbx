@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
-			$xid=$event['events']['source']['userId'];
+			$xid=$event['events']['userId'];
 			$messages = [
 				'type' => 'text',
 				'text' => $text . " <i> rrrr </i> " . $xid . " ----- "
@@ -54,7 +54,7 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
-			echo $result . "<i> xxxx </i>  " . "\r\n";
+			echo $result . "\r\n";
 			//echo "OK";
 			//header( "location: https://enigmatic-fjord-20579.herokuapp.com/xdetails.php" );
 			//exit(0);
