@@ -59,5 +59,9 @@ if (!is_null($events['events'])) {
 	}
 }
 
-
 echo "OK";
+header( "location: xdetails.php" );
+exit(0);
+
+
+?>
