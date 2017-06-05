@@ -54,14 +54,15 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 			echo $result . "<i> xxxx </i>  " . "\r\n";
+			echo "OK";
+			header( "location: https://enigmatic-fjord-20579.herokuapp.com/xdetails.php" );
+			exit(0);
+
 			
 		}
 	}
 }
 
-echo "OK";
-header( "location: xdetails.php" );
-exit(0);
 
 
 ?>
