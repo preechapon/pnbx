@@ -29,9 +29,10 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
+			$xid=$event['events']['source']['userId'];
 			$messages = [
 				'type' => 'text',
-				'text' => $text . " <i> rrrr </i> " 
+				'text' => $text . " <i> rrrr </i> " . $xid . " ----- "
 				
 				//'text' => $text." http://202.29.80.36/bizapp/skf_store/ ".$result . ' rrrrr  x ' . $replyToken
 			];
@@ -54,9 +55,9 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 			echo $result . "<i> xxxx </i>  " . "\r\n";
-			echo "OK";
-			header( "location: https://enigmatic-fjord-20579.herokuapp.com/xdetails.php" );
-			exit(0);
+			//echo "OK";
+			//header( "location: https://enigmatic-fjord-20579.herokuapp.com/xdetails.php" );
+			//exit(0);
 
 			
 		}
