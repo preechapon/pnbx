@@ -1,5 +1,19 @@
 <?php
 $access_token = 'Wq9xxsG1gxLCMJba+ZwZ8X/8KMJWgBk6PmqkRPfrM0IoWHCVwuaChqcB+fcKZQ/RxKlZabEzvYM5BePVCSs0bNn/YSVteCjWvWCr67dtNObLd66Zn2oCnHK1Rp/uJ17dRWKuGPdoTqri9lEX+mRdxwdB04t89/1O/w1cDnyilFU=';
+$sc = '7cfadaf7fbbd66688cafb178506354af';
+
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '7cfadaf7fbbd66688cafb178506354af']);
+$response = $bot->getProfile('<userId>');
+if ($response->isSucceeded()) {
+    $profile = $response->getJSONDecodedBody();
+	$xProfile = $profile['displayName'] . " xxxx " .  $profile['statusMessage'] . " rrrr " . $profile['userid'];
+    echo $profile['displayName'];
+    echo $profile['pictureUrl'];
+    echo $profile['statusMessage'];
+}
+
+
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -29,7 +43,9 @@ echo $result;
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text." http://202.29.80.36/bizapp/skf_store/ ".$result . ' rrrrr  x ' . $replyToken
+				'text' => $text . " rrrr " . $xProfile
+				
+				//'text' => $text." http://202.29.80.36/bizapp/skf_store/ ".$result . ' rrrrr  x ' . $replyToken
 			];
 			//test 
 		   	//test
