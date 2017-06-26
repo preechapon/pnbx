@@ -38,9 +38,11 @@ if (!is_null($events['events'])) {
 			$xid=$event['userid'];
 			$messages = [
 				'type' => 'text',
-				'text' => $text . " rrrr x " . $xid . " ----- "
+				'text' => $text . " rrrr x " . $xid . " ----- ",
+				'type' => 'URL',
+				'URL' => "http://202.29.80.36/bizapp/skf_store/"
 				
-				//'text' => $text." http://202.29.80.36/bizapp/skf_store/ ".$result . ' rrrrr  x ' . $replyToken
+				//'text' => $text." http://202.29.80.36/bizapp/skf_store/".$result . ' rrrrr  x ' . $replyToken
 			];
 			//test 
 		   	//test
