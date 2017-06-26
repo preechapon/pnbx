@@ -29,10 +29,10 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
-			$xid=$event['userId'];
+			$xid=$event['userid'];
 			$messages = [
 				'type' => 'text',
-				'text' => $text . " rrrr " . $xid . " ----- "
+				'text' => $text . " rrrr x " . $xid . " ----- "
 				
 				//'text' => $text." http://202.29.80.36/bizapp/skf_store/ ".$result . ' rrrrr  x ' . $replyToken
 			];
