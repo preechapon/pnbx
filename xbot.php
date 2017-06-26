@@ -7,17 +7,6 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	$access_token = 'Wq9xxsG1gxLCMJba+ZwZ8X/8KMJWgBk6PmqkRPfrM0IoWHCVwuaChqcB+fcKZQ/RxKlZabEzvYM5BePVCSs0bNn/YSVteCjWvWCr67dtNObLd66Zn2oCnHK1Rp/uJ17dRWKuGPdoTqri9lEX+mRdxwdB04t89/1O/w1cDnyilFU=';
-	/*
-	$url = 'https://api.line.me/v1/oauth/verify';
-	$headers = array('Authorization: Bearer ' . $access_token);
-	$ch = curl_init($url);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-	$result = curl_exec($ch);
-	curl_close($ch);
-	echo $result;
-	*/
 	//
 	//bot
 	// Loop through each event
@@ -26,12 +15,9 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
-			echo "OK";
-			header( "http://202.29.80.36/bizapp/skf_store/line_order.php?p9=luser1+%2B+%E0%B8%82%E0%B8%B2%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87+15");
-			exit(0);
-			
-			
-			
+			//echo "OK";
+			//header( "http://202.29.80.36/bizapp/skf_store/line_order.php?p9=luser1+%2B+%E0%B8%82%E0%B8%B2%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87+15");
+			//exit(0);
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
