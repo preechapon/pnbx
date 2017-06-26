@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL,"http://202.29.80.36/bizapp/skf_store/line_order.php");
+curl_setopt($ch, CURLOPT_URL,"http://202.29.80.36/bizapp/skf_store/line_order.php?p9=luser1+ยืนยัน");
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS,
 	    "p9=". $text);
