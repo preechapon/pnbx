@@ -28,6 +28,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
 }else if($arrJson['events'][0]['message']['text'] == "เตือน"){
+  $strUrl = "https://api.line.me/v2/bot/message/push";
   $arrPostData = array();
   $arrPostData['to'] = $arrJson['events'][0]['source']['userId'];
   $arrPostData['messages'][0]['type'] = "text";
