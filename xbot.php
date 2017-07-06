@@ -31,7 +31,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
  //URL Example : “../line_order_css.php?lineid=luser1&p9=+%2B+ขาหลัง+10” 
  $xArr = explode(" ",$xtext);
-  $arrPostData['messages'][0]['text'] = "http://202.29.80.36/bizapp/skf/line_order_curl.php?lineid=".$arrJson['events'][0]['source']['userId'] . "&p9=%2B+" . $xArr[1] ."+" . $xArr[2] ; 
+  //$arrPostData['messages'][0]['text'] = "http://202.29.80.36/bizapp/skf/line_order_curl.php?lineid=".$arrJson['events'][0]['source']['userId'] . "&p9=%2B+" . $xArr[1] ."+" . $xArr[2] ; 
+ $arrPostData['messages'][0]['text'] = "http://202.29.80.36/bizapp/skf/line_order_curl.php?lineid=luser1" . "&p9=%2B+" . $xArr[1] ."+" . $xArr[2] ; 
  /*
   $strUrl = "http://202.29.80.36/bizapp/skf/line_order_curl.php";
   $xPostData = array();
