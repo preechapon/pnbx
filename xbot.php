@@ -34,7 +34,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
 }else if(substr($arrJson['events'][0]['message']['text'],0,1) == "+"){
-  $strUrl = "http://202.29.80.36/bizapp/skf/line_order_curl.php";
+/*
+ $strUrl = "http://202.29.80.36/bizapp/skf/line_order_curl.php";
   $arrPostData = array();
   $arrPostData['p9'] = $arrJson['events'][0]['message']['text'];
   $arrPostData['lineid'] = $arrJson['events'][0]['source']['userId'];
@@ -49,7 +50,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
  $result = curl_exec($ch);
  curl_close ($ch); 
-
+*/
   $strUrl = "https://api.line.me/v2/bot/message/push";
  
   $arrPostData = array();
