@@ -52,14 +52,14 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
  $result = curl_exec($ch);
  curl_close ($ch); 
 */
-  $strUrl = "https://api.line.me/v2/bot/message/push";
+  //$strUrl = "https://api.line.me/v2/bot/message/push";
  
   //$arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = " xxxxx "; 
   
- $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+// $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
 //  //$arrPostData['messages'][0]['type'] = "text";
 //  //$arrPostData['messages'][0]['text'] = "OK รับแล้ว";
 }else{
