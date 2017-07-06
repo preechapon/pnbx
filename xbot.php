@@ -33,7 +33,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['to'] = $arrJson['events'][0]['source']['userId'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
-}else if(substr(($arrJson['events'][0]['message']['text']),0,1) == "ก"){
+//}else if(substr(($arrJson['events'][0]['message']['text']),0,1) == "ก"){
+ }else if($arrJson['events'][0]['message']['text'] == "ก"){
 /*
  $strUrl = "http://202.29.80.36/bizapp/skf/line_order_curl.php";
   $arrPostData = array();
