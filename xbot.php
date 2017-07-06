@@ -26,10 +26,28 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
 }else if(substr($xtext,0,1) == "+"){
-  $arrPostData = array();
+ 
+  $strUrl = "http://202.29.80.36/bizapp/skf/line_order_curl.php";
+  $arrPostData['p9'] = $arrJson['events'][0]['message']['text'];
+  $arrPostData['lineid'] = $arrJson['events'][0]['source']['userId'];
+  
+ $ch = curl_init();
+ curl_setopt($ch, CURLOPT_URL,$strUrl);
+ curl_setopt($ch, CURLOPT_HEADER, false);
+ curl_setopt($ch, CURLOPT_POST, true);
+ curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
+ curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrPostData));
+ curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+ $result = curl_exec($ch);
+ curl_close ($ch); 
+
+ 
+  $strUrl = "https://api.line.me/v2/bot/message/push";
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = substr("rxxxx xxx ",0,1); 
+  $arrPostData['messages'][0]['text'] =  $result; 
+
 }else if($arrJson['events'][0]['message']['text'] == "เตือน"){
   $strUrl = "https://api.line.me/v2/bot/message/push";
   $arrPostData = array();
