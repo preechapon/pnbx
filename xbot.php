@@ -54,7 +54,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 */
   $strUrl = "https://api.line.me/v2/bot/message/push";
  
-  $arrPostData = array();
+  //$arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = " xxxxx "; 
