@@ -25,11 +25,11 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
-}else if(substr("$arrJson['events'][0]['message']['text']",0,1) == "ก"){
+}else if($arrJson['events'][0]['message']['text']) == "ก"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = " xxxx xxx "; 
+  $arrPostData['messages'][0]['text'] = substr("rxxxx xxx ",0,1); 
 }else if($arrJson['events'][0]['message']['text'] == "เตือน"){
   $strUrl = "https://api.line.me/v2/bot/message/push";
   $arrPostData = array();
