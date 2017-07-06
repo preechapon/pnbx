@@ -1,6 +1,4 @@
 <?php
-
-
 $strAccessToken = 'Wq9xxsG1gxLCMJba+ZwZ8X/8KMJWgBk6PmqkRPfrM0IoWHCVwuaChqcB+fcKZQ/RxKlZabEzvYM5BePVCSs0bNn/YSVteCjWvWCr67dtNObLd66Zn2oCnHK1Rp/uJ17dRWKuGPdoTqri9lEX+mRdxwdB04t89/1O/w1cDnyilFU=';
  
 $content = file_get_contents('php://input');
@@ -33,35 +31,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['to'] = $arrJson['events'][0]['source']['userId'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
-//}else if(substr(($arrJson['events'][0]['message']['text']),0,1) == "ก"){
- }else if($arrJson['events'][0]['message']['text'] == "ก"){
-/*
- $strUrl = "http://202.29.80.36/bizapp/skf/line_order_curl.php";
-  $arrPostData = array();
-  $arrPostData['p9'] = $arrJson['events'][0]['message']['text'];
-  $arrPostData['lineid'] = $arrJson['events'][0]['source']['userId'];
-  
- $ch = curl_init();
- curl_setopt($ch, CURLOPT_URL,$strUrl);
- curl_setopt($ch, CURLOPT_HEADER, false);
- curl_setopt($ch, CURLOPT_POST, true);
- curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
- curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrPostData));
- curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
- curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
- $result = curl_exec($ch);
- curl_close ($ch); 
-*/
-  //$strUrl = "https://api.line.me/v2/bot/message/push";
- 
-  //$arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = " xxxxx "; 
-  
-// $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//  //$arrPostData['messages'][0]['type'] = "text";
-//  //$arrPostData['messages'][0]['text'] = "OK รับแล้ว";
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
