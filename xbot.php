@@ -26,7 +26,11 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
 }else if(substr($xtext,0,1) == "+"){
- 
+  $arrPostData = array();
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['text'] = "http://202.29.80.36/bizapp/skf/line_order_css.php?p9=".$arrJson['events'][0]['source']['userId'] . $xtext; 
+ /*
   $strUrl = "http://202.29.80.36/bizapp/skf/line_order_curl.php";
   $xPostData = array();
   $xPostData['p9'] = $arrJson['events'][0]['message']['text'];
@@ -48,7 +52,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] =  " xxxxx " . $arrJson['events'][0]['source']['userId'];
-
+*/
 }else if($arrJson['events'][0]['message']['text'] == "เตือน"){
   $strUrl = "https://api.line.me/v2/bot/message/push";
   $arrPostData = array();
