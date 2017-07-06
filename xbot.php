@@ -38,7 +38,26 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['p9'] = $arrJson['events'][0]['message']['text'];
   $arrPostData['lineid'] = $arrJson['events'][0]['source']['userId'];
-//  //$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  
+ $ch = curl_init();
+ curl_setopt($ch, CURLOPT_URL,$strUrl);
+ curl_setopt($ch, CURLOPT_HEADER, false);
+ curl_setopt($ch, CURLOPT_POST, true);
+ curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
+ curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrPostData));
+ curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+ $result = curl_exec($ch);
+ curl_close ($ch); 
+
+  $strUrl = "https://api.line.me/v2/bot/message/push";
+ 
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = " xxxxx "; 
+  
+ $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
 //  //$arrPostData['messages'][0]['type'] = "text";
 //  //$arrPostData['messages'][0]['text'] = "OK รับแล้ว";
 }else{
