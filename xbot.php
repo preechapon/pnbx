@@ -32,8 +32,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 
  $url = "http://202.29.80.36/bizapp/skf/line_order_curl.php"; 
 $data = array (
-	"lineid" => "$text1",
-	"p9" => "$text2"
+	"lineid" => $text1,
+	"p9" => $text2
 	);
 $ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
