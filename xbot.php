@@ -26,12 +26,32 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
 }else if(substr($xtext,0,1) == "+"){
+
+ $text1 = $arrJson['events'][0]['source']['userId'];
+ $text2 = $arrJson['events'][0]['message']['text'];
+
+ $url = "http://202.29.80.36/bizapp/skf/line_order_curl.php"; 
+$data = array (
+	"lineid" => "$text1",
+	"p9" => "$text2"
+	);
+$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $data); 
+	$output = curl_exec($ch); 
+	curl_close($ch); 
+echo $output;
+ 
+ 
+ 
   $arrPostData = array();
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
  //URL Example : “../line_order_css.php?lineid=luser1&p9=+%2B+ขาหลัง+10” 
  $xArr = explode(" ",$xtext);
-  $arrPostData['messages'][0]['text'] = "http://202.29.80.36/bizapp/skf/line_order_curl.php?lineid=".$arrJson['events'][0]['source']['userId'] . "&p9=%2B+" . $xArr[1] ."+" . $xArr[2] ; 
+  $arrPostData['messages'][0]['text'] = $output; 
  //$arrPostData['messages'][0]['text'] = "http://202.29.80.36/bizapp/skf/line_order_curl.php?lineid=luser1" . "&p9=%2B+" . $xArr[1] ."+" . $xArr[2] ; 
  /*
   $strUrl = "http://202.29.80.36/bizapp/skf/line_order_curl.php";
