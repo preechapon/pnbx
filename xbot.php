@@ -39,10 +39,11 @@ $ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_POST, 1);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $data); 
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
 	$output = curl_exec($ch); 
 	curl_close($ch); 
-echo $output;
+//echo $output;
  
  
  
@@ -52,30 +53,7 @@ echo $output;
  //URL Example : “../line_order_css.php?lineid=luser1&p9=+%2B+ขาหลัง+10” 
  $xArr = explode(" ",$xtext);
   $arrPostData['messages'][0]['text'] = $output; 
- //$arrPostData['messages'][0]['text'] = "http://202.29.80.36/bizapp/skf/line_order_curl.php?lineid=luser1" . "&p9=%2B+" . $xArr[1] ."+" . $xArr[2] ; 
- /*
-  $strUrl = "http://202.29.80.36/bizapp/skf/line_order_curl.php";
-  $xPostData = array();
-  $xPostData['p9'] = $arrJson['events'][0]['message']['text'];
-  $xPostData['lineid'] = $arrJson['events'][0]['source']['userId'];
-  
- $ch = curl_init();
- curl_setopt($ch, CURLOPT_URL,$strUrl);
- curl_setopt($ch, CURLOPT_HEADER, false);
- curl_setopt($ch, CURLOPT_POST, true);
- curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
- curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($xPostData));
- curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
- curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
- $result = curl_exec($ch);
-// curl_close ($ch); 
-
  
-  $strUrl = "https://api.line.me/v2/bot/message/push";
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] =  " xxxxx " . $arrJson['events'][0]['source']['userId'];
-*/
 }else if($arrJson['events'][0]['message']['text'] == "เตือน"){
   $strUrl = "https://api.line.me/v2/bot/message/push";
   $arrPostData = array();
