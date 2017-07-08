@@ -30,7 +30,10 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
  $text1 = $arrJson['events'][0]['source']['userId'];
  $text2 = $arrJson['events'][0]['message']['text'];
 
+	$data=array();
+	
  $url = "http://202.29.80.36/bizapp/skf/line_order_curl.php"; 
+	
 $data = array (
 	"lineid" => $text1,
 	"p9" => $text2
@@ -38,7 +41,8 @@ $data = array (
 $ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt($ch, CURLOPT_HEADER, false);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
