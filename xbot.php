@@ -1,5 +1,5 @@
 <?php
-$strAccessToken = 'Wq9xxsG1gxLCMJba+ZwZ8X/8KMJWgBk6PmqkRPfrM0IoWHCVwuaChqcB+fcKZQ/RxKlZabEzvYM5BePVCSs0bNn/YSVteCjWvWCr67dtNObLd66Zn2oCnHK1Rp/uJ17dRWKuGPdoTqri9lEX+mRdxwdB04t89/1O/w1cDnyilFU=';
+$strAccessToken = '';
  
 $content = file_get_contents('php://input');
 $arrJson = json_decode($content, true);
